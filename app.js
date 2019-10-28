@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
+import routes from "./routes";
 
 const app = express();
 
@@ -26,8 +27,8 @@ app.use(morgan("combined"));
 app.use(helmet());
 
 app.use(betweenMiddle);
-app.use("/",globalRouter); // global Router root("/")가 될 것.
-app.use("/user", userRouter); // userRouter has a URL associated with the user.
-app.use("/video", videoRouter);
+app.use(routes.home,globalRouter); // global Router root("/")가 될 것.
+app.use(routes.users, userRouter); // userRouter has a URL associated with the user.
+app.use(routes.videos, videoRouter);
 
 export default app;
