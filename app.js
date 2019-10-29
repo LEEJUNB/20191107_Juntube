@@ -10,6 +10,8 @@ import routes from "./routes";
 
 const app = express();
 
+app.set("view engine", "pug");
+
 const betweenMiddle = (req,res,next) => {
     console.log("***** intercept *****");
     next();
