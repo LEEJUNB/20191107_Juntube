@@ -29,8 +29,8 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use(morgan("dev"));
 
 app.use(localsMiddleware); // local's skill can make to access the variable
+// what's local skill? locals : 로컬변수응답을 포함하는 객체. 유용한  정보를 내보내는데 유용
 
-app.use(betweenMiddle);
 app.use(routes.home,globalRouter); // global Router root("/")가 될 것.
 app.use(routes.users, userRouter); // userRouter has a URL associated with the user.
 app.use(routes.videos, videoRouter);
