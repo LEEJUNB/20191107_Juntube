@@ -3,3 +3,8 @@ extends layouts/main
 block content
     p.p__text #{new Date().getFullYear()} First Project
     p #{variable__text}
+    .form__container
+        form(action="/login", method="post")
+            input(type="email", name="email", placeholder="Email")
+            input(type="password", name="password", placeholder="Password")
+            input(type="submit",value="Log In")
